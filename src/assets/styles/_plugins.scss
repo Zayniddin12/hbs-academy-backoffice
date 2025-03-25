@@ -1,0 +1,32 @@
+.vue-tel-input {
+  border-radius: 8px !important;
+  border: 1px solid transparent !important;
+  background: var(--greys-grey-4-bg, #F7F9FA);
+  &:focus-within {
+    box-shadow: none !important;
+    border-color: #16CC53 !important;
+    border: 1px solid var(--main-blue, #16CC53);
+  }
+  .vti__dropdown-arrow {
+    display: none !important;
+  }
+  .vti__dropdown {
+    &:hover {
+      background: transparent !important;
+    }
+  }
+  .vti__input {
+    border: none;
+    background: transparent;
+    margin: 0;
+    color: var(--main-dark, #080A15);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    padding: 11px 0;
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,183 @@
+export const assignment = {
+  id: 1,
+  name: "Создайте инвестиционный портфель с разными активами (акции, облигации, сырьевые товары и валюта) и определите его диверсификацию. Как это может помочь снизить риски?",
+  is_submitted: true,
+  is_checked: true,
+  type: "test",
+  deadline: "2021-05-20T00:00:00.000Z",
+  submitted_date: "2021-06-20T00:00:00.000Z",
+  point: 10,
+};
+
+export const questions = [
+  {
+    id: 1,
+    title: "Что такое лонг торговле?",
+    type: "single",
+    answer: null,
+    is_answered: false,
+    is_right: false,
+    answers: [
+      {
+        id: 1,
+        title: "Продажа актива",
+        value: "A",
+        is_right: true,
+      },
+      {
+        id: 2,
+        title: "Покупка актива",
+        value: "B",
+        is_right: false,
+      },
+      {
+        id: 3,
+        title: "Покупка актива с намерением удерживать",
+        value: "D",
+        is_right: false,
+      },
+      {
+        id: 4,
+        title: "Краткосрочная торговля",
+        value: "C",
+        is_right: false,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Выберите изображение которая указывает на стакан маркета",
+    type: "multi",
+    answer: [2, 3],
+    is_answered: true,
+    is_right: true,
+    answers: [
+      {
+        id: 1,
+        title: "Продажа актива",
+        value: "A",
+        is_right: true,
+      },
+      {
+        id: 2,
+        title: "Покупка актива",
+        value: "B",
+        is_right: false,
+      },
+      {
+        id: 3,
+        title: "Покупка актива с намерением удерживать",
+        value: "D",
+        is_right: true,
+      },
+      {
+        id: 4,
+        title: "Краткосрочная торговля",
+        value: "C",
+        is_right: false,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Выберите изображения которые   не подходить к трейдингу",
+    type: "single-image",
+    answer: 1,
+    is_answered: true,
+    is_right: false,
+    answers: [
+      {
+        id: 1,
+        title: "Продажа актива",
+        value: "A",
+        is_right: false,
+      },
+      {
+        id: 2,
+        title: "Покупка актива",
+        value: "B",
+        is_right: false,
+      },
+      {
+        id: 3,
+        title: "Покупка актива с намерением удерживать",
+        value: "D",
+        is_right: true,
+      },
+      {
+        id: 4,
+        title: "Краткосрочная торговля",
+        value: "C",
+        is_right: false,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Выберите изображения которые   не подходить к трейдингу",
+    type: "multi-image",
+    answer: [1, 4],
+    is_answered: true,
+    is_right: false,
+    answers: [
+      {
+        id: 1,
+        title: "Продажа актива",
+        value: "A",
+        is_right: true,
+      },
+      {
+        id: 2,
+        title: "Покупка актива",
+        value: "B",
+        is_right: true,
+      },
+      {
+        id: 3,
+        title: "Покупка актива с намерением удерживать",
+        value: "D",
+        is_right: false,
+      },
+      {
+        id: 4,
+        title: "Краткосрочная торговля",
+        value: "C",
+        is_right: false,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Выберите изображения которые   не подходить к трейдингу",
+    type: "ordering",
+    answer: "",
+    is_answered: false,
+    is_right: false,
+    answers: [
+      {
+        id: 1,
+        title: "Продажа актива",
+        value: "A",
+        is_right: false,
+      },
+      {
+        id: 2,
+        title: "Покупка актива",
+        value: "B",
+        is_right: false,
+      },
+      {
+        id: 3,
+        title: "Покупка актива с намерением удерживать",
+        value: "D",
+        is_right: false,
+      },
+      {
+        id: 4,
+        title: "Краткосрочная торговля",
+        value: "C",
+        is_right: false,
+      },
+    ],
+  },
+];

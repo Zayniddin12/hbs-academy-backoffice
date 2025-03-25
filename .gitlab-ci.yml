@@ -1,0 +1,35 @@
+before_script:
+  - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+
+stages:
+  - build_prod
+  - deploy_prod
+
+build_image_master:
+  stage: build_prod
+  image: registry.uicgroup.tech/devops/docker:dind
+  before_script:
+    - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+  script:
+    - make vars-input
+    - make build-image TAG=$CI_PIPELINE_IID SERVICE_NAME=$CI_PROJECT_NAME PROJECT_NAME=$CI_PROJECT_NAMESPACE REGISTRY=$CI_REGISTRY ENV_TAG=latest
+    - make push-image TAG=$CI_PIPELINE_IID SERVICE_NAME=$CI_PROJECT_NAME PROJECT_NAME=$CI_PROJECT_NAMESPACE REGISTRY=$CI_REGISTRY ENV_TAG=latest
+  only:
+    - master
+
+
+deploy_image_swarm:
+  image: registry.uicgroup.tech/devops/docker:dind
+  stage: deploy_prod
+  tags:
+    - front-hbs-devops
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$GITLAB_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+  script:
+    - docker service update --with-registry-auth --image "$(echo $CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$CI_PIPELINE_IID | tr '[:upper:]' '[:lower:]')" 'hbs_academy-backoffice'
+  only:
+    - master
